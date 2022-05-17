@@ -34,7 +34,7 @@ XHR.onload = function () {
     console.log(arr);
 };
 XHR.onerror = function () {
-    console.log("FUCKING!!! Wrong");
+    console.error("Somthing! Went Wrong");
 };
 
  XHR.send();
