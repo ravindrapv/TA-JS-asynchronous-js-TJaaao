@@ -36,12 +36,23 @@ setTimeout(() => console.log('B'), 0); // callback queue
 Promise.resolve().then(() => console.log('C'));
 
 console.log('D');
+//A
+//D
+//C
+//B
 ```
 
 5. Write a function named `wait` that accepts `time` in ms returns a promise. The promise gets resolved after given time.
 
 ```js
-// Your code
+function wait(time){
+    return new Promise((res,rej) => {
+        setTimeout(() => {
+            res(`Promise resolved`)
+        },time);
+    })
+}
+wait(1000).than(console.log)
 ```
 
 6. Do the following:
@@ -54,7 +65,17 @@ console.log('D');
 - Catch the error using `.catch`
 
 ```js
-// Your code
+let promise = new Promise((res,rej) => {
+    res(21);
+})
+.than((value) => value + 10)
+.than((value) => value + 100)
+.than(value => {
+    if(value > 100){
+        throw new Error('Somthing went wrong');
+    }
+})
+.catch(console.log);
 ```
 
 7. Do the following:
@@ -66,7 +87,19 @@ console.log('D');
 - Use `.then` and log the value
 
 ```js
-// Your code
+let promise = new Promise((res,rej) => {
+    res(['A']);
+})
+
+.than((value) => value.concat('B'))
+return value.reduce(acc,cv,i) =>{
+    acc[i] = cv;
+    return acc;
+},{})
+
+.than(value => {
+    console.log(value);
+});
 ```
 
 8. Do the following:
@@ -77,7 +110,21 @@ console.log('D');
 - Chain `.then` on above and return `4` also check the value you get access to by logging
 
 ```js
-// Your code
+let first = new Promise((res,rej) => {
+    res(1);
+})
+
+.than((value) => {
+    return value + 2
+})
+return value.reduce(acc,cv,i) =>{
+    acc[i] = cv;
+    return acc;
+},{})
+
+.than(value => {
+    console.log(value);
+});
 ```
 
 9. Do the following:
@@ -88,7 +135,21 @@ console.log('D');
 - Use `.then` on `first` and return `4` also check the value you get access to by logging
 
 ```js
-// Your code
+let first = new Promise((res,rej) => {
+    res(1);
+})
+
+.than((value) => {
+    return value + 2
+})
+return value.reduce(acc,cv,i) =>{
+    acc[i] = cv;
+    return acc;
+},{})
+
+.than(value => {
+    console.log(value);
+});
 ```
 
 10. Try to understand the difference between the problem 8 and 9. Write your observation.
@@ -101,5 +162,19 @@ console.log('D');
 - Use `.then` to log the value
 
 ```js
-// Your code
+let first = new Promise((res,rej) => {
+    res(1);
+})
+
+.than((value) => {
+    return value + 2
+})
+return value.reduce(acc,cv,i) =>{
+    acc[i] = cv;
+    return acc;
+},{})
+
+.than(value => {
+    console.log(value);
+});
 ```
