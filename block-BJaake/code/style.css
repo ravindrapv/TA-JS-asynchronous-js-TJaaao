@@ -52,6 +52,11 @@ body{
     padding: 10px 50px;
     background-color: rgb(241,222,184)
 }
+.hero{
+    max-width: 100%;
+    background-color: black;
+    color: #ffff;
+}
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -93,17 +98,20 @@ body{
 .img{
     height: 250px;
     width: 250px;
+    margin: 0.5rem;
 }
 button{
-    padding: 1rem;
+    padding: 0.6rem;
     border-radius: 10%;
     text-align: center;
-    background-color: orange;
+    background-color: rgb(145,183,183);
     margin: 1rem;
+    color: #ffff;
 }
 
 select{
     padding: 0.8rem;
+    margin: 1rem;
 }
 h1{
     font-size: 3rem;
