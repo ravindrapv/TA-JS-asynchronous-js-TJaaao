@@ -19,6 +19,14 @@ const two = new Promise((resolve, reject) =>
 const three = new Promise((resolve, reject) =>
   setTimeout(() => resolve('John'), 3000)
 );
+let promisSet =  Promise.allSettled([one,two,three]);
+.than((res) => console.log(res))
+.than((error) => cosole.error(error));
+
+let PromisAll = Promise.all([one,two,three]);
+.than((res) => console.log(res))
+.than((error) => cosole.error(error));
+
 ```
 
 - What will be the output of the following code snippet? How much time will it take for the promise to resolve?
